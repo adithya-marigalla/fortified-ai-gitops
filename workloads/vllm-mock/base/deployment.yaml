@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vllm-mock
+spec:
+  selector:
+    matchLabels:
+      app: vllm-mock
+  template:
+    metadata:
+      labels:
+        app: vllm-mock
+    spec:
+      containers:
+      - name: vllm-container
+        image: nginx:alpine  # Mocking the heavy AI image
+        ports:
+        - containerPort: 80
