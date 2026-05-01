@@ -6,3 +6,4 @@ patches:
   - path: patch-dev.yaml
 namespace: ai-dev
 namePrefix: dev-
+nameSuffix: -v2
