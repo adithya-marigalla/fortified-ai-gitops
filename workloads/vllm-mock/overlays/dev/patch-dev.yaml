@@ -1,6 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: vllm-mock
+  name: vllm-mockv2
 spec:
   replicas: 1
