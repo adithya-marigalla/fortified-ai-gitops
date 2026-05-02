@@ -4,6 +4,7 @@ resources:
   - ../../base
 patches:
   - path: patch-dev.yaml
+  - redis-db.yaml
 namespace: ai-dev
 namePrefix: dev-
 nameSuffix: -v2
