@@ -4,7 +4,7 @@ metadata:
   name: vllm-dev-app
   namespace: argocd
 spec:
-  project: default
+  project: data-science
   source:
     repoURL: 'https://github.com/adithya-marigalla/fortified-ai-gitops.git'
     targetRevision: HEAD
