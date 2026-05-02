@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - ../../base
   - redis-db.yaml
+  - integration-test-hook.yaml
 patches:
   - path: patch-dev.yaml
 namespace: ai-dev
