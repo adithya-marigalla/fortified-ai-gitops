@@ -1,5 +1,5 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
 metadata:
   name: vllm-mock
 spec:
@@ -13,6 +13,6 @@ spec:
     spec:
       containers:
       - name: vllm-container
-        image: nginx:alpine  # Mocking the heavy AI image
+        image: nginx:1.24-alpine  # Mocking the heavy AI image
         ports:
         - containerPort: 80
