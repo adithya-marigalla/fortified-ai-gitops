@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: data-science
+  namespace: argocd
+spec:
+  description: Strictly isolated sandbox for the Data Science team
+  
+  # 1. Allowed Source: They can only deploy from this specific repository
+  sourceRepos:
+  - 'https://github.com/adithya-marigalla/fortified-ai-gitops.git'
+  
+  # 2. Allowed Destination: They can only deploy into the 'ai-dev' namespace
+  destinations:
+  - namespace: 'ai-dev'
+    server: 'https://kubernetes.default.svc'
+  
+  # 3. The Lock: By leaving this empty, we explicitly DENY all Cluster-scoped resources 
+  # (like ClusterRoles, ClusterRoleBindings, and Namespaces)
+  clusterResourceWhitelist: []
