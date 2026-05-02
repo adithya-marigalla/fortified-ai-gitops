@@ -1,8 +1,13 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
 metadata:
   name: vllm-mock
   annotations:
     argocd.argoproj.io/sync-wave: "2"
 spec:
-  replicas: 1
+  replicas: 5
+  strategy:                        # <-- The MAANG Magic
+    canary:
+      steps:
+      - setWeight: 20              # Route 20% of traffic to the new version
+      - pause: {}                  # Pause FOREVER until an Architect approves it
