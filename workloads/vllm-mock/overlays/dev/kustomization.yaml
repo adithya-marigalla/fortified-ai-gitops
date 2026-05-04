@@ -2,10 +2,5 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - ../../base
-  - redis-db.yaml
-  - integration-test-hook.yaml
-patches:
-  - path: patch-dev.yaml
 namespace: ai-dev
 namePrefix: dev-
-nameSuffix: -v2
